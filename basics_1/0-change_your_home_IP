@@ -7,11 +7,11 @@ HOSTS_FILE="/etc/hosts"
 # Backup the original hosts file
 sudo cp "$HOSTS_FILE" "$HOSTS_FILE.bak"
 
-# Add or update the localhost entry
+# Update or add the localhost entry
 sudo sed -i '/^127\.0\.0\.1\s\+localhost/d' "$HOSTS_FILE"
 echo '127.0.0.2 localhost' | sudo tee -a "$HOSTS_FILE" > /dev/null
 
-# Add or update the facebook.com entry
+# Update or add the facebook.com entry
 sudo sed -i '/^8\.8\.8\.8\s\+facebook\.com/d' "$HOSTS_FILE"
 echo '8.8.8.8 facebook.com' | sudo tee -a "$HOSTS_FILE" > /dev/null
 
