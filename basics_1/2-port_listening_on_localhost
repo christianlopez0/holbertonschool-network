@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script lists all ports currently listening on localhost.
+
+# Use `ss` command to list all listening ports on localhost.
+ss -tuln | grep '^LISTEN' | awk '{print $5}' | cut -d: -f2 | sort -n | uniq
